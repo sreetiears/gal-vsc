@@ -2,8 +2,6 @@
 
 Cursor 优先的 VS Code / Cursor 扩展 demo：底部面板里的蓝色大肥鱼会跟着你的编码活动涨 **好感度** 与 **陪伴**。
 
-交互灵感来自 [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget)（拖动 / 右下角 / 按压），**未使用**其美术资源。
-
 ## 功能（MVP）
 
 - Panel 内可拖动角色 + 泡内短句 + 心情滤镜
