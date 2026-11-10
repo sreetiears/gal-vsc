@@ -1,0 +1,64 @@
+{
+  "name": "gal-vsc",
+  "displayName": "大肥鱼陪伴宠",
+  "description": "Cursor 优先的 VS Code 陪伴宠物：好感度 + 陪伴，跟着编译/测试/Agent 一起成长。",
+  "version": "0.1.0",
+  "publisher": "sreetiears",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "galVsc",
+          "title": "大肥鱼",
+          "icon": "media/pet/whale-idle.png"
+        }
+      ]
+    },
+    "views": {
+      "galVsc": [
+        {
+          "type": "webview",
+          "id": "galVsc.petView",
+          "name": "大肥鱼"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "galVsc.showPet",
+        "title": "大肥鱼: 显示陪伴面板"
+      },
+      {
+        "command": "galVsc.resetState",
+        "title": "大肥鱼: 重置存档"
+      },
+      {
+        "command": "galVsc.installCursorHooks",
+        "title": "大肥鱼: 安装 Cursor Hooks"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node ./out/test/runDomainTests.js",
+    "lint": "tsc -p ./ --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}

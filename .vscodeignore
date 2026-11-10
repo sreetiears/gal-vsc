@@ -1,0 +1,17 @@
+.vscode/**
+.vscode-test/**
+src/**
+scripts/**
+docs/**
+assets/**
+node_modules/**
+.gitignore
+tsconfig.json
+**/*.ts
+**/*.map
+**/.git/**
+**/.github/**
+*.plan.md
+GLOSSARY.md
+README.md
+!README.md

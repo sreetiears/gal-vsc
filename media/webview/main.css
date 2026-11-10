@@ -1,0 +1,105 @@
+:root {
+  --bg: var(--vscode-editor-background, #1e1e1e);
+  --fg: var(--vscode-foreground, #ddd);
+  --accent: #5b9bd5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--vscode-font-family, "Segoe UI", sans-serif);
+  user-select: none;
+}
+
+#hud {
+  position: absolute;
+  z-index: 5;
+  top: 6px;
+  left: 8px;
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+#stage {
+  position: absolute;
+  inset: 0;
+}
+
+#pet {
+  position: absolute;
+  width: 160px;
+  cursor: grab;
+  transform-origin: bottom center;
+  transition: filter 0.25s ease, transform 0.2s ease;
+}
+
+#pet:active {
+  cursor: grabbing;
+}
+
+#pet.press {
+  transform: scaleY(0.92) scaleX(1.04);
+}
+
+#sprite {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+#bubble {
+  position: absolute;
+  left: 4%;
+  top: 2%;
+  width: 42%;
+  min-height: 18%;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  word-break: break-word;
+}
+
+.mood-idle #sprite {
+  filter: none;
+}
+
+.mood-happy #sprite {
+  filter: brightness(1.08) saturate(1.15);
+  animation: hop 0.45s ease;
+}
+
+.mood-sad #sprite {
+  filter: grayscale(0.35) brightness(0.92);
+}
+
+.mood-sleep #sprite {
+  filter: brightness(0.75) saturate(0.7);
+  opacity: 0.92;
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
